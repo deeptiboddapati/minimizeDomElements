@@ -1,0 +1,26 @@
+{
+  "name": "minimizedomelements",
+  "version": "1.0.0",
+  "description": "An example project that minimizes dom elements.",
+  "main": "minimaldom.html",
+  "author": "Deepti Boddapati",
+  "license": "ISC",
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "indentation": "tab"
+    }
+  },
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded assets/:assets/",
+    "sass-prod": "sass --no-source-map --style=compressed assets/:assets/"
+  },
+  "dependencies": {
+    "gulp-sass": "^5.1.0",
+    "postcss-scss": "^4.0.6"
+  },
+  "devDependencies": {
+    "sass": "^1.56.2",
+    "stylelint-config-standard": "^29.0.0"
+  }
+}
