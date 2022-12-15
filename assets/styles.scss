@@ -1,27 +1,798 @@
-.logo-and-nav {
-	&- {
-		&logo{
+@font-face {
+	font-family: Roboto;
+	src: url(./fonts/Roboto-Regular-webfont-subset.woff);
+}
 
+@font-face {
+	font-family: Roboto-Medium;
+	src: url(./fonts/Roboto-Medium-webfont-subset.woff);
+}
+
+body {
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+
+.wrapper {
+	max-width: 1320px;
+	margin: 0 auto;
+}
+
+.top-page-background {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+}
+
+.footer-ombre {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 800px;
+	grid-area: 1/1/1/13;
+	background: rgb(212 230 251);
+	background: linear-gradient(0deg, rgb(212 230 251 / 100%) 0%, rgb(212 230 251 / 100%) 50%, rgb(255 255 255 / 100%) 88%);
+	z-index: -1;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+	margin: 0;
+}
+
+header {
+	margin-bottom: 128px;
+	display: grid;
+	grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px;
+	grid-template-rows: 80px;
+	gap: 24px 24px;
+	grid-template-areas: "logo one two three four five . . phone phone Contact Contact";
+
+	.logo {
+		line-height: 80px;
+		place-self: center;
+		grid-area: logo;
+		text-decoration: none;
+	}
+
+	.one {
+		line-height: 48px;
+		place-self: center;
+		grid-area: one;
+		text-decoration: none;
+	}
+
+	.two {
+		line-height: 48px;
+		place-self: center;
+		grid-area: two;
+		text-decoration: none;
+	}
+
+	.three {
+		line-height: 48px;
+		place-self: center;
+		grid-area: three;
+		text-decoration: none;
+	}
+
+	.four {
+		line-height: 48px;
+		place-self: center;
+		grid-area: four;
+		text-decoration: none;
+	}
+
+	.five {
+		grid-area: five;
+	}
+
+	.link {
+		font-family: Roboto, sans-serif;
+		font-style: normal;
+		font-size: 16px;
+		text-decoration: none;
+		color: #1e266d;
+		line-height: 48px;
+		place-self: center;
+
+		&:focus,
+		&:visited,
+		&:hover {
+			color: #1e266d;
 		}
+	}
 
-		&nav{
+	.phone {
+		font-family: Roboto, sans-serif;
+		font-style: normal;
+		font-size: 16px;
+		line-height: 48px;
+		place-self: center stretch;
+		grid-area: phone;
+		text-align: center;
+		color: #fff;
+		text-decoration: none;
 
+		&:focus,
+		&:visited,
+		&:hover {
+			color: white;
 		}
+	}
 
-		&link{
+	.contact {
+		font-family: Roboto, sans-serif;
+		font-style: normal;
+		font-size: 16px;
+		border-radius: 100px;
+		line-height: 48px;
+		grid-area: Contact;
+		text-align: center;
+		place-self: center stretch;
+		text-decoration: none;
+		height: 48px;
+		background-color: #3751ff;
+		color: #fff;
 
+		&:focus,
+		&:visited,
+		&:hover {
+			color: white;
 		}
 	}
 }
 
-.contact {
-	&- {
-		&phone{
+.hero {
+	margin-bottom: 128px;
+	display: grid;
+	grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px;
+	grid-template-rows: 80px 80px 80px 80px 80px 80px;
+	gap: 24px 24px;
+	grid-template-areas:
+		"icon . . . . . image image image image image ."
+		"headline headline headline headline headline . image image image image image ."
+		"headline headline headline headline headline . image image image image image ."
+		"text text text . . . image image image image image ."
+		"navigation-primary navigation-primary navigation-secondary navigation-secondary . . image image image image image ."
+		". . . . . . image image image image image .";
 
+	&- {
+		&icon {
+			grid-area: icon;
+			place-self: center;
 		}
 
-		&form{
+		&headline {
+			align-self: center;
+			grid-area: headline;
+			font-family: Roboto-Medium, sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 64px;
+			line-height: 72px;
+			color: #1e266d;
+		}
 
+		&text {
+			align-self: flex-start;
+			grid-area: text;
+			font-family: Roboto, sans-serif;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 32px;
+		}
+
+		&navigation-primary {
+			grid-area: navigation-primary;
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 48px;
+			text-align: center;
+			color: #fff;
+			height: 48px;
+			background: #3751ff;
+			justify-self: stretch;
+			text-decoration: none;
+			border-radius: 100px;
+
+			&:focus,
+			&:visited,
+			&:hover {
+				color: white;
+			}
+		}
+
+		&navigation-secondary {
+			align-self: flex-start;
+			grid-area: navigation-secondary;
+			font-family: Roboto, sans-serif;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 48px;
+			text-align: center;
+			color: #455880;
+			justify-self: stretch;
+			text-decoration: none;
+
+			&:focus,
+			&:visited,
+			&:hover {
+				color: #455880;
+			}
+		}
+
+		&image {
+			grid-area: image;
+			place-self: stretch flex-start;
+		}
+	}
+}
+
+.partner {
+	margin-bottom: 128px;
+	display: flex;
+	justify-content: space-evenly;
+
+	img {
+		width: 124px;
+	}
+
+	&- {
+		&one{}
+		&two{}
+		&three{}
+		&four{}
+		&five{}
+		&six{}
+	}
+}
+
+.services {
+	margin-bottom: 128px;
+	display: grid;
+	grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px;
+	grid-template-rows: 80px 80px 80px 80px 80px 80px;
+	gap: 24px 24px;
+	grid-template-areas:
+		"section-header section-header . . . . . services-text services-text services-text services-text services-text"
+		"heading heading heading heading heading . . services-text services-text services-text services-text services-text"
+		"service-one service-one service-one service-one service-two service-two service-two service-two service-three service-three service-three service-three"
+		"service-one service-one service-one service-one service-two service-two service-two service-two service-three service-three service-three service-three"
+		"service-one service-one service-one service-one service-two service-two service-two service-two service-three service-three service-three service-three"
+		"service-one service-one service-one service-one service-two service-two service-two service-two service-three service-three service-three service-three";
+
+	&- {
+		&section-header {
+			align-self: flex-end;
+			grid-area: section-header;
+			font-family: Roboto-Medium, sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 24px;
+			line-height: 32px;
+			color: #3751ff;
+		}
+
+		&heading {
+			align-self: flex-start;
+			grid-area: heading;
+			font-family: Roboto-Medium, sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 48px;
+			line-height: 56px;
+			color: #1e266d;
+		}
+		&first { grid-area: service-one; }
+		&second { grid-area: service-two; }
+		&third { grid-area: service-three; }
+
+		&service {
+			background: #fff;
+			box-shadow: 0 4px 4px rgb(135 146 161 / 16%), 0 6px 41px rgb(135 146 161 / 11%);
+			border-radius: 18px;
+			padding: 72px;
+			align-self: stretch;
+			display: flex;
+			flex-flow: column;
+			justify-content: space-evenly;
+
+			&- {
+				&image {
+					width: 56px;
+				}
+
+				&heading {
+					font-family: Roboto, sans-serif;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 32px;
+					color: #1e266d;
+				}
+
+				&text {
+					font-family: Roboto, sans-serif;
+					font-style: normal;
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 24px;
+					color: #455880;
+				}
+			}
+		}
+
+		&text {
+			align-self: center;
+			grid-area: services-text;
+			font-family: Roboto, sans-serif;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 32px;
+			color: #455880;
+		}
+	}
+}
+
+.about {
+	margin-bottom: 128px;
+	display: grid;
+	grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px;
+	grid-template-rows: 80px 80px 80px 80px 80px 80px;
+	gap: 24px 24px;
+	grid-template-areas:
+		"image image image image image image . . . . . ."
+		"image image image image image image . section-header section-header . . ."
+		"image image image image image image . heading heading heading . ."
+		"image image image image image image . text text text text ."
+		"image image image image image image . text text text text ."
+		"image image image image image image . text text text text .";
+
+	&- {
+		&image {
+			grid-area: image;
+			place-self: stretch flex-start;
+		}
+
+		&section-header {
+			grid-area: section-header;
+			font-family: Roboto-Medium, sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 24px;
+			line-height: 32px;
+			color: #ff2e6a;
+			align-self: flex-end;
+		}
+
+		&heading {
+			align-self: flex-start;
+			grid-area: heading;
+			font-family: Roboto-Medium, sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 48px;
+			line-height: 56px;
+			color: #1e266d;
+		}
+
+		&text {
+			align-self: flex-start;
+			grid-area: text;
+			font-family: Roboto, sans-serif;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 32px;
+			color: #455880;
+		}
+	}
+}
+
+.portfolio {
+	margin-bottom: 128px;
+	display: grid;
+	grid-template-columns: 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px;
+	grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+	grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	gap: 24px 24px;
+	grid-auto-flow: row;
+	grid-template-areas:
+		"heading heading heading heading . . . . . . . ."
+		"heading heading heading heading . . . . . . . ."
+		"heading heading heading heading . . . project-first project-first project-first project-first project-first"
+		"project-second project-second project-second project-second project-second . . project-first project-first project-first project-first project-first"
+		"project-second project-second project-second project-second project-second . . project-first project-first project-first project-first project-first"
+		"project-second project-second project-second project-second project-second . . project-first project-first project-first project-first project-first"
+		"project-second project-second project-second project-second project-second . . project-first project-first project-first project-first project-first"
+		"project-second project-second project-second project-second project-second . . . . . . ."
+		". . . . . . . project-fourth project-fourth project-fourth project-fourth project-fourth"
+		"project-third project-third project-third project-third project-third . . project-fourth project-fourth project-fourth project-fourth project-fourth"
+		"project-third project-third project-third project-third project-third . . project-fourth project-fourth project-fourth project-fourth project-fourth"
+		"project-third project-third project-third project-third project-third . . project-fourth project-fourth project-fourth project-fourth project-fourth"
+		"project-third project-third project-third project-third project-third . . project-fourth project-fourth project-fourth project-fourth project-fourth"
+		"project-third project-third project-third project-third project-third . . . . rating rating rating"
+		"nav nav . . . . . . . rating rating rating";
+
+	&- {
+		&heading {
+			grid-area: heading;
+			font-family: Roboto-Medium, sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 48px;
+			line-height: 56px;
+			color: #1e266d;
+		}
+
+		&rating {
+			grid-area: rating;
+			align-self: flex-end;
+			justify-self: flex-end;
+
+			&-text {
+				font-family: Roboto-Medium, sans-serif;
+				font-style: normal;
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 24px;
+				text-align: center;
+				color: #1e266d;
+			}
+		}
+
+		&nav {
+			align-self: flex-end;
+			grid-area: nav;
+			font-family: Roboto-Medium, sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 16px;
+			color: #3751ff;
+
+			&:focus,
+			&:visited,
+			&:hover {
+				color: #3751ff;
+			}
+		}
+
+		&project {
+			display: flex;
+			justify-content: space-evenly;
+			flex-flow: column;
+			padding: 32px;
+			background: #fff;
+			box-shadow: 0 4px 4px rgb(135 146 161 / 16%), 0 6px 41px rgb(135 146 161 / 11%);
+			border-radius: 18px;
+
+			&- {
+				&name {
+					font-family: Roboto-Medium;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 32px;
+					color: #1e266d;
+				}
+
+				&service {
+					font-family: Roboto, sans-serif;
+					font-style: normal;
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 24px;
+					color: #455880;
+				}
+
+				&img {
+					max-width: 100%;
+				}
+			}
+		}
+		&project-first { grid-area: project-first; }
+
+		&project-fourth { grid-area: project-fourth; }
+
+		&project-second { grid-area: project-second; }
+
+		&project-third { grid-area: project-third; }
+	}
+}
+
+.reviews {
+	margin-bottom: 128px;
+	display: grid;
+	grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px;
+	grid-template-rows: 80px 80px 80px 80px 80px 80px;
+	gap: 24px 24px;
+	grid-template-areas:
+		". . . . . section-header section-header . . . . ."
+		". . . section-heading section-heading section-heading section-heading section-heading section-heading . . ."
+		"review-first review-first review-first review-first review-second review-second review-second review-second review-third review-third review-third review-third"
+		"review-first review-first review-first review-first review-second review-second review-second review-second review-third review-third review-third review-third"
+		"review-first review-first review-first review-first review-second review-second review-second review-second review-third review-third review-third review-third"
+		"review-first review-first review-first review-first review-second review-second review-second review-second review-third review-third review-third review-third";
+
+	&- {
+		&section-header {
+			grid-area: section-header;
+			font-family: Roboto-Medium, sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 24px;
+			line-height: 32px;
+			place-self: center center;
+			color: #ff2e6a;
+		}
+
+		&heading {
+			grid-area: section-heading;
+			font-family: Roboto-Medium, sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 48px;
+			line-height: 56px;
+			text-align: center;
+			place-self: center center;
+			color: #282d5b;
+		}
+
+		&review {
+			display: flex;
+			flex-flow: row;
+			flex-wrap: wrap;
+			padding: 40px;
+			background: #fff;
+			box-shadow: 0 4px 4px rgb(135 146 161 / 16%), 0 6px 41px rgb(135 146 161 / 11%);
+			border-radius: 18px;
+
+			&- {
+				&name {
+					font-family: Roboto-Medium, sans-serif;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 32px;
+					color: #1e266d;
+				}
+
+				&attribution {
+					display: flex;
+					flex-flow: column;
+					margin-left: 16px;
+				}
+
+				&source {
+					font-family: Roboto;
+					font-style: normal;
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 24px;
+					color: #455880;
+				}
+
+				&text {
+					font-family: Roboto;
+					font-style: normal;
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 24px;
+					color: #455880;
+				}
+
+				&stars {
+					height: 16px;
+				}
+
+				&pic {
+					height: 80px;
+				}
+			}
+		}
+		&review-first { grid-area: review-first; }
+		&review-second { grid-area: review-second; }
+		&review-third { grid-area: review-third; }
+	}
+}
+
+.footer {
+	background-color: #fff;
+	display: grid;
+	grid-template-columns: 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px;
+	grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px;
+	grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	gap: 24px 24px;
+	grid-auto-flow: row;
+	padding-bottom: 16px;
+
+	&- {
+		&other-links {
+			grid-area: 8 / 8 / 9 / 12;
+			font-family: Roboto, sans-serif;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 24px;
+			place-self: flex-end flex-end;
+			color: #455880;
+
+			&-list {
+				margin: 0;
+				list-style: none;
+				padding: 0;
+				display: flex;
+
+				&-link a {
+					font-family: Roboto, sans-serif;
+					font-style: normal;
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 24px;
+					text-align: right;
+					color: #455880;
+
+					&:focus,
+					&:visited,
+					&:hover {
+						color: #455880;
+					}
+
+					text-decoration: none;
+					margin-left: 24px;
+				}
+			}
+		}
+
+		&copyright {
+			grid-area: 8 / 2 / 9 / 5;
+			font-family: Roboto, sans-serif;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 24px;
+			place-self: flex-end flex-start;
+			color: rgb(69 88 128 / 50%);
+		}
+
+		&section {
+			font-family: Roboto, sans-serif;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 24px;
+			color: #455880;
+
+			&:focus,
+			&:visited,
+			&:hover {
+				color: #455880;
+			}
+
+			&- {
+				&heading {
+					font-family: Roboto-Medium, sans-serif;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 32px;
+					color: #1e266d;
+				}
+
+				&links {
+					display: flex;
+					flex-flow: column;
+					justify-content: space-between;
+					list-style: none;
+					padding: 0;
+				}
+
+				&socials {
+					display: flex;
+					justify-content: space-between;
+					margin: 32px 0;
+				}
+			}
+		}
+		&fourth { grid-area: 5 / 10 / 7 / 12; }
+
+		&third { grid-area: 5 / 8 / 8 / 9; }
+
+		&second { grid-area: 5 / 6 / 8 / 7; }
+
+		&first { grid-area: 5 / 2 / 7 / 5; }
+
+		&footer-background {
+			grid-area: 2 / 1 / 9 / 13;
+			z-index: -1;
+			background-color: white;
+		}
+	}
+}
+
+.banner {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap: 0 0;
+	grid-auto-flow: row;
+	grid-template-areas:
+		". . . . . . . . . . . ."
+		". heading heading heading heading . . . target target target ."
+		". . . . . . . . text text text .";
+	grid-area: 1 / 1 / 4 / 13;
+	background: #fff;
+	box-shadow: 0 4px 4px rgb(135 146 161 / 16%), 0 6px 41px rgb(135 146 161 / 11%);
+	border-radius: 14px;
+
+	&- {
+		&heading {
+			grid-area: heading;
+			font-family: Roboto-Medium, sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 48px;
+			line-height: 56px;
+			color: #1e266d;
+		}
+
+		&target {
+			grid-area: target;
+			font-family: Roboto-Medium, sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 48px;
+			text-align: center;
+			color: #fff;
+			background-color: #3751ff;
+			border-radius: 100px;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			height: 48px;
+			width: 100%;
+
+			&:focus,
+			&:visited,
+			&:hover {
+				color: #fff;
+			}
+		}
+
+		&text {
+			grid-area: text;
+			font-family: Roboto, sans-serif;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 24px;
+			text-align: right;
+			color: #455880;
 		}
 	}
 }
