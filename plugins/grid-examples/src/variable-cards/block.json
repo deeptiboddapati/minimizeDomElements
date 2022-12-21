@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "db/variable-cards",
+	"version": "0.1.0",
+	"title": "Cards with a header, a title and a description",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Supports a variable number of cards. Best if they're used in multiples of 3",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "textdomain",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
