@@ -17,7 +17,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  */
 export default function save() {
 	return (
-		<section  {...useBlockProps.save()} className="variable-cards" >
+		<section className="variable-cards" {...useBlockProps.save()} >
 			<p className="variable-cards-section-header">Our Services</p>
 			<h3 className="variable-cards-heading">From idea to execution</h3>
 			<p className="variable-cards-text">Marketing, development, design, and

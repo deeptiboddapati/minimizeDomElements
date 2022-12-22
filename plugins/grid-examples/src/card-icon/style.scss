@@ -14,17 +14,20 @@
 	font-family: Roboto-Medium;
 	src: url(../assets/fonts/Roboto-Medium-webfont-subset.woff);
 }
-
 .card-icon {
 	background: #fff;
 	box-shadow: 0 4px 4px rgb(135 146 161 / 16%), 0 6px 41px rgb(135 146 161 / 11%);
 	border-radius: 18px;
-	align-self: stretch;
 	display: grid;
-	grid-template-columns: repeat(8, 40px);
-	grid-template-rows: repeat(7, 40px);
-	grid-gap: 16px;
-
+	grid-template-columns: 24px 1fr 24px;
+	grid-template-rows:repeat(8, 40px);
+	//Cards will have the same layout but different lengths of content. 
+	//Setting explicit row heights will keep things looking tidy.
+	grid-row-gap: 16px;
+	@media screen and (min-width: 1366px ){
+		grid-template-columns: 56px 1fr 56px;
+		grid-gap: 16px;
+	}
 	&- {
 		&image {
 			width: 40px;
@@ -34,8 +37,6 @@
 
 		&heading {
 			margin: 0;
-			grid-column: 2/7;
-			grid-row: 3/5;
 			font-family: Roboto, sans-serif;
 			font-style: normal;
 			font-weight: 500;
@@ -43,11 +44,12 @@
 			line-height: 32px;
 			color: #1e266d;
 			place-self: center flex-start;
+			grid-column: 2/3;
+			grid-row:3/5;
 		}
 
 		&text {
 			margin: 0;
-			grid-column: 2/7;
 			grid-row: 5/7;
 			font-family: Roboto, sans-serif;
 			font-style: normal;
@@ -55,6 +57,7 @@
 			font-size: 16px;
 			line-height: 24px;
 			color: #455880;
+			grid-column: 2/3;
 		}
 	}
 }

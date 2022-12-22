@@ -1964,7 +1964,7 @@ function save(_ref) {
   } = attributes;
   console.log(attributes.title);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    class: "card-icon"
+    className: "card-icon"
   }, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save()), imgUrl && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("img", {
     className: "card-icon-image",
     src: imgUrl,
