@@ -130,22 +130,24 @@ function save(_ref) {
   } = _ref;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("section", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
     className: "variable-cards"
-  }, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save()), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("p", {
-    className: "variable-cards-section-header",
+  }, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save()), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+    className: "variable-cards-captions"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("p", {
+    className: "variable-cards-captions-section-header",
     dangerouslySetInnerHTML: {
       __html: dompurify__WEBPACK_IMPORTED_MODULE_3___default().sanitize(attributes.header)
     }
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("h3", {
-    className: "variable-cards-heading",
+    className: "variable-cards-captions-heading",
     dangerouslySetInnerHTML: {
       __html: dompurify__WEBPACK_IMPORTED_MODULE_3___default().sanitize(attributes.heading)
     }
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("p", {
-    className: "variable-cards-text",
+    className: "variable-cards-captions-text",
     dangerouslySetInnerHTML: {
       __html: dompurify__WEBPACK_IMPORTED_MODULE_3___default().sanitize(attributes.text)
     }
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: "variable-cards-cards"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null)));
 }

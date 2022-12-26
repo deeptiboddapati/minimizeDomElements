@@ -1,0 +1,125 @@
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/hero/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************/
+.hero {
+  margin-bottom: 128px;
+  display: grid;
+}
+@media screen and (min-width: 1366px) {
+  .hero {
+    grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px 88px;
+    grid-template-rows: 80px 80px 80px 80px 80px 80px;
+    gap: 24px 24px;
+    grid-template-areas: "icon . . . . . image image image image image ." "headline headline headline headline headline . image image image image image ." "headline headline headline headline headline . image image image image image ." "text text text . . . image image image image image ." "navigation-primary navigation-primary navigation-secondary navigation-secondary . . image image image image image ." ". . . . . . image image image image image .";
+  }
+}
+.hero-icon {
+  grid-area: icon;
+  place-self: center;
+}
+.hero-headline {
+  grid-row: 2/3;
+  grid-column: 1/5;
+  align-self: center;
+  grid-area: headline;
+  font-family: Roboto-Medium, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 72px;
+  color: #1e266d;
+}
+.hero-text {
+  grid-row: 3/4;
+  grid-column: 1/5;
+  align-self: flex-start;
+  grid-area: text;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+.hero-navigation-primary {
+  grid-row: 4/5;
+  grid-column: 1/3;
+  align-self: center;
+  grid-area: navigation-primary;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 48px;
+  text-align: center;
+  color: #fff;
+  height: 48px;
+  background: #3751ff;
+  justify-self: stretch;
+  text-decoration: none;
+  border-radius: 100px;
+}
+.hero-navigation-primary:focus, .hero-navigation-primary:visited, .hero-navigation-primary:hover {
+  color: white;
+}
+.hero-navigation-secondary {
+  grid-row: 4/5;
+  grid-column: 3/5;
+  align-self: center;
+  align-self: flex-start;
+  grid-area: navigation-secondary;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 48px;
+  text-align: center;
+  color: #455880;
+  justify-self: stretch;
+  text-decoration: none;
+}
+.hero-navigation-secondary:focus, .hero-navigation-secondary:visited, .hero-navigation-secondary:hover {
+  color: #455880;
+}
+.hero-image {
+  grid-column: 1/5;
+  grid-row: 1/2;
+  grid-area: image;
+  place-self: stretch flex-start;
+}
+@media screen and (min-width: 1366px) {
+  .hero-icon {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .hero-headline {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+  }
+  .hero-text {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  .hero-navigation-primary {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+  .hero-navigation-secondary {
+    -ms-grid-row: 9;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 3;
+  }
+  .hero-image {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 11;
+    -ms-grid-column: 13;
+    -ms-grid-column-span: 9;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

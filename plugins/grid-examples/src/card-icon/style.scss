@@ -15,6 +15,7 @@
 	display: grid;
 	grid-template-columns: 24px 1fr 24px;
 	grid-template-rows:repeat(8, 40px);
+	flex:0 0 100%;
 	//Cards will have the same layout but different lengths of content. 
 	//Setting explicit row heights will keep things looking tidy.
 	grid-row-gap: 16px;

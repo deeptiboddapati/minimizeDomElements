@@ -186,7 +186,7 @@ const ImageControls = props => {
   const clearImage = (propUrl, propAlt, propId) => {
     var args = {};
     args[propUrl] = undefined;
-    args[propAlt] = "";
+    args[propAlt] = '';
     args[propId] = undefined;
     setAttributes(args);
   };
@@ -205,7 +205,7 @@ const ImageControls = props => {
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, id ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: className,
     style: {
-      flexFlow: "column"
+      flexFlow: 'column'
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: src,
@@ -217,8 +217,8 @@ const ImageControls = props => {
       buttonState[1](!buttonState[0]);
     },
     style: {
-      alignSelf: "flex-start",
-      justifySelf: "start"
+      alignSelf: 'flex-start',
+      justifySelf: 'start'
     }
   }, "Clear Image")) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaPlaceholder, {
     className: className,

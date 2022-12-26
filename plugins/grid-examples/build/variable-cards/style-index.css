@@ -14,24 +14,28 @@
   margin-bottom: 128px;
   max-width: -moz-fit-content;
   max-width: fit-content;
+  position: relative;
+}
+.variable-cards-captions {
   display: grid;
-  grid-template-columns: 16px 1fr 16px;
+  grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 @media screen and (min-width: 768px) {
-  .variable-cards {
-    grid-template-columns: 16px repeat(4, 1fr) 16px;
-    grid-gap: 16px;
+  .variable-cards-captions {
+    grid-template-columns: 1fr 160px 1fr;
   }
 }
 @media screen and (min-width: 1366px) {
-  .variable-cards {
-    max-width: 1340px;
-    grid-template-columns: 1fr 160px 1fr;
+  .variable-cards-captions {
     gap: 24px 24px;
   }
 }
-.variable-cards-section-header {
+.variable-cards-captions-section-header {
   margin: 0;
   align-self: flex-end;
   font-family: Roboto-Medium, sans-serif;
@@ -43,17 +47,17 @@
   line-height: 100%;
 }
 @media screen and (min-width: 768px) {
-  .variable-cards-section-header {
+  .variable-cards-captions-section-header {
     grid-column: 2/4;
     grid-row: 1/2;
   }
 }
 @media screen and (min-width: 1366px) {
-  .variable-cards-section-header {
+  .variable-cards-captions-section-header {
     grid-column: 1/2;
   }
 }
-.variable-cards-heading {
+.variable-cards-captions-heading {
   margin: 0;
   font-family: Roboto-Medium, sans-serif;
   font-style: normal;
@@ -65,17 +69,17 @@
   line-height: 100%;
 }
 @media screen and (min-width: 768px) {
-  .variable-cards-heading {
+  .variable-cards-captions-heading {
     grid-column: 2/4;
     grid-row: 2/3;
   }
 }
 @media screen and (min-width: 1366px) {
-  .variable-cards-heading {
+  .variable-cards-captions-heading {
     grid-column: 1/2;
   }
 }
-.variable-cards-text {
+.variable-cards-captions-text {
   margin: 0;
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -87,13 +91,13 @@
   line-height: 100%;
 }
 @media screen and (min-width: 768px) {
-  .variable-cards-text {
+  .variable-cards-captions-text {
     grid-column: 4/6;
     grid-row: 2/3;
   }
 }
 @media screen and (min-width: 1366px) {
-  .variable-cards-text {
+  .variable-cards-captions-text {
     grid-column: 3/4;
   }
 }
@@ -101,6 +105,14 @@
   grid-column: 2/3;
   display: grid;
   grid-gap: 16px;
+  overflow-y: auto;
+  overflow: scoll;
+  height: 100vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.variable-cards-cards::-webkit-scrollbar {
+  display: none;
 }
 @media screen and (min-width: 768px) {
   .variable-cards-cards {

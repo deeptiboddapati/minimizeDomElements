@@ -7,100 +7,128 @@
 	font-family: Roboto-Medium;
 	src: url(../assets/fonts/Roboto-Medium-webfont-subset.woff);
 }
+
 .variable-cards {
 	margin: 0 auto;
 	margin-bottom: 128px;
 	max-width: fit-content;
-	display: grid;
-	grid-template-columns: 16px 1fr 16px; //if the body adds padding, just remove columns 1 and 3.
+	// grid-template-columns: 16px 1fr 16px; //if the body adds padding, just remove columns 1 and 3.
 	// We don't set rows because we want the number of rows to be variable depending on how many cards there are.
-	grid-row-gap:16px;
-	@media screen and (min-width: 768px ){
-		grid-template-columns:16px repeat(4, 1fr) 16px; //fractional widths allow the column to size flexibly according to device.
-		grid-gap:16px;
-	}
-	@media screen and (min-width: 1366px ){
-		max-width: 1340px;
-		grid-template-columns: 1fr 160px 1fr; 
-		// grid-auto-rows: minmax(80px, auto);
-		// We don't set the height of the rows because we want them to expand to fit their contents.
-		gap: 24px 24px;
-	}
+	position: relative;
+
+	@media screen and (min-width: 768px) {}
+
 	&- {
-		&section-header {
-			margin:0;
-			align-self: flex-end;
-			font-family: Roboto-Medium, sans-serif;
-			font-style: normal;
-			font-weight: 500;
-			font-size: 24px;
-			color: #3751ff;
-			grid-column:2/3;
-		line-height: 100%;
+		&captions {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-row-gap: 16px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
 
-			@media screen and (min-width: 768px ){
-				grid-column: 2/4;
-				grid-row:1/2;
+			@media screen and (min-width: 768px) {
+				grid-template-columns: 1fr 160px 1fr;
 			}
-			@media screen and (min-width: 1366px ){
-				grid-column: 1/2;
+
+			@media screen and (min-width: 1366px) {
+				gap: 24px 24px;
+			}
+
+			&- {
+				&section-header {
+					margin: 0;
+					align-self: flex-end;
+					font-family: Roboto-Medium, sans-serif;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 24px;
+					color: #3751ff;
+					grid-column: 2/3;
+					line-height: 100%;
+
+					@media screen and (min-width: 768px) {
+						grid-column: 2/4;
+						grid-row: 1/2;
+					}
+
+					@media screen and (min-width: 1366px) {
+						grid-column: 1/2;
+					}
+				}
+
+				&heading {
+					margin: 0;
+					font-family: Roboto-Medium, sans-serif;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 48px;
+					color: #1e266d;
+					grid-column: 2/3;
+					grid-row: 2/4;
+					line-height: 100%;
+
+					@media screen and (min-width: 768px) {
+						grid-column: 2/4;
+						grid-row: 2/3;
+					}
+
+					@media screen and (min-width: 1366px) {
+						grid-column: 1/2;
+					}
+				}
+
+				&text {
+					margin: 0;
+					font-family: Roboto, sans-serif;
+					font-style: normal;
+					font-weight: 400;
+					font-size: 24px;
+					color: #455880;
+					grid-column: 2/3;
+					grid-row: 4/6;
+					line-height: 100%;
+
+					@media screen and (min-width: 768px) {
+						grid-column: 4/6;
+						grid-row: 2/3;
+					}
+
+					@media screen and (min-width: 1366px) {
+						grid-column: 3/4;
+					}
+				}
 			}
 		}
 
-		&heading {
-			margin:0;
-			font-family: Roboto-Medium, sans-serif;
-			font-style: normal;
-			font-weight: 500;
-			font-size: 48px;
-			color: #1e266d;
-			grid-column:2/3;
-			grid-row:2/4;
-			line-height: 100%;
-
-			@media screen and (min-width: 768px ){
-				grid-column: 2/4;
-				grid-row: 2/3;
-			}
-			@media screen and (min-width: 1366px ){
-				grid-column: 1/2;
-			}
-		}
-
-		&text {
-			margin:0;
-			font-family: Roboto, sans-serif;
-			font-style: normal;
-			font-weight: 400;
-			font-size: 24px;
-			color: #455880;
-			grid-column:2/3;
-			grid-row:4/6;
-			line-height: 100%;
-			@media screen and (min-width: 768px ){
-				grid-column: 4/6;
-				grid-row: 2/3;
-			}
-			@media screen and (min-width: 1366px ){
-				grid-column: 3/4;
-			}
-		}
 		&cards {
 			grid-column: 2/3;
 			display: grid; //Layout for innerBlocks.
 			grid-gap: 16px;
-			@media screen and (min-width: 768px ){
+			overflow-y: auto;
+			overflow: scoll;
+			height: 100vh;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+
+			@media screen and (min-width: 768px) {
 				grid-column: 2/6;
 				grid-row-start: 3;
 				grid-template-columns: repeat(2, 1fr);
 			}
-			@media screen and (min-width: 1366px ){
+
+			@media screen and (min-width: 1366px) {
 				grid-column: 1/4;
 				grid-template-columns: repeat(3, 1fr); //We have 3 columns but variable amount of rows.
 				// grid-auto-rows: 1fr; //This is not needed because we know cards always have a set height.
-						display: flex;
-							flex-direction: column;
-							scroll-snap-type: y mandatory;
+				display: flex;
+				flex-direction: column;
+				scroll-snap-type: y mandatory;
 			}
 		}
 	}
