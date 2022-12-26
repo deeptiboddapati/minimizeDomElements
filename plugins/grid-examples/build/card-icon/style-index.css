@@ -1,12 +1,6 @@
 /*!*************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/card-icon/style.scss ***!
   \*************************************************************************************************************************************************************************************************************************************************/
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
 @font-face {
   font-family: Roboto;
   src: url(../fonts/Roboto-Regular-webfont-subset.55d3149b.woff);
@@ -28,6 +22,9 @@
   .card-icon {
     grid-template-columns: 56px 1fr 56px;
     grid-gap: 16px;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
   }
 }
 .card-icon-image {
@@ -41,9 +38,9 @@
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
-  line-height: 32px;
+  line-height: 100%;
   color: #1e266d;
-  place-self: center flex-start;
+  place-self: flex-start;
   grid-column: 2/3;
   grid-row: 3/5;
 }
@@ -54,7 +51,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 100%;
   color: #455880;
   grid-column: 2/3;
 }

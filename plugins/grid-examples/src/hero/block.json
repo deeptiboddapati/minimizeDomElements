@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "db/hero",
+	"version": "0.1.0",
+	"title": "Hero",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "An H1, supporting statement, Main cta buttons for the page, and a large image.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "hero",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"source": "text",
+			"selector": "hero-headline"
+		},
+		"text": {
+			"type": "string",
+			"source": "text",
+			"selector": "hero-text"
+		},
+		"ctaPrimary": {
+			"type": "string",
+			"source": "text",
+			"selector": ".hero-navigation-primary",
+			"default": " "
+		},
+		"urlPrimary": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".hero-navigation-primary",
+			"attribute": "href",
+			"default": " "
+		},
+		"ctaSecondary": {
+			"type": "string",
+			"source": "text",
+			"selector": ".hero-navigation-secondary",
+			"default": " "
+		},
+		"urlSecondary": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".hero-navigation-secondary",
+			"attribute": "href",
+			"default": " "
+		},
+		"imgUrl_icon": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "",
+			"attribute": "src"
+		},
+		"imgAlt_icon": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "",
+			"attribute": "alt",
+			"default": " "
+		},
+		"imgId_icon": {
+			"type": "number"
+		},
+		"imgUrl": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "",
+			"attribute": "src"
+		},
+		"imgAlt": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "",
+			"attribute": "alt",
+			"default": ""
+		},
+		"imgId": {
+			"type": "number"
+		}
+	}
+}

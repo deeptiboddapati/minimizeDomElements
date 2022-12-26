@@ -10,6 +10,23 @@
 	"supports": {
 		"html": false
 	},
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"source": "text",
+			"selector": ".variable-cards-heading"
+		},
+		"text": {
+			"type": "string",
+			"source": "text",
+			"selector": ".variable-cards-text"
+		},
+		"header": {
+			"type": "string",
+			"source": "text",
+			"selector": ".variable-cards-section-header"
+		}
+	},
 	"textdomain": "textdomain",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

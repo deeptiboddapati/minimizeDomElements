@@ -1,11 +1,12 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import './editor.scss';
-import { ImageControls } from './image';
-
+import { ImageControls } from '../components-global/image';
+import { LayoutFullWidth } from '../components-global/layouts/layouts';
 export default function Edit({ attributes, setAttributes }) {
 	return (
 		<div className="card-icon" {...useBlockProps()}>
+			<LayoutFullWidth className="card-icon" onClick={() => console.log('hurdur')} ></LayoutFullWidth>
 			<ImageControls
 				className='card-icon-image'
 				src={attributes.imgUrl}

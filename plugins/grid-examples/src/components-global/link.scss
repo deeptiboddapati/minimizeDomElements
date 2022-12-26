@@ -1,0 +1,15 @@
+.warning {
+	display: none;
+}
+
+.warn {
+	color: red;
+
+	.warning {
+		display: block;
+	}
+}
+
+.show-warning {
+	border: red solid 4px;
+}

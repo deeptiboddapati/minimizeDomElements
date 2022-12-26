@@ -1,0 +1,24 @@
+body {
+	font-size: 8px;
+	padding: 0;
+}
+
+.layoutFullWidth {
+	width: 100%;
+
+	&-padded {
+		padding: 0 2em;
+	}
+}
+
+.layoutCenteredColumn {
+	padding: 0 2em;
+
+	@media screen and (min-width: 768px) {
+		max-width: 600px;
+	}
+
+	@media screen and (min-width: 1366px) {
+		max-width: 800px;
+	}
+}
