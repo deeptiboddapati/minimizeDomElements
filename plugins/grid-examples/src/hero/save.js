@@ -1,64 +1,59 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import DOMPurify from 'dompurify';
-export default function save( { attributes } ) {
+export default function save({ attributes }) {
+	console.log(attributes)
 	return (
-		<section className="hero" { ...useBlockProps.save() }>
-			{ attributes.imgUrl_icon && attributes.imgAlt ? (
+		<section className="hero" {...useBlockProps.save()}>
+			{attributes.imgUrl_icon ?
 				<img
-					className="hero-image"
-					src={ attributes.imgUrl_icon }
-					alt={ attributes.imgAlt_icon }
+					className="hero-icon"
+					src={attributes.imgUrl_icon}
+					alt={attributes.imgAlt_icon}
 				/>
-			) : (
+				:
 				<></>
-			) }
-			<img
-				className="hero-icon"
-				src="./assets/images/icon-min.jpg"
-				alt="A
-		decorative icon that shows we build an app"
-			/>
+			}
 			<h1
 				className="hero-headline"
-				dangerouslySetInnerHTML={ {
-					__html: DOMPurify.sanitize( attributes.headline ),
-				} }
+				dangerouslySetInnerHTML={{
+					__html: DOMPurify.sanitize(attributes.headline),
+				}}
 			/>
 			<p
 				className="hero-text"
-				dangerouslySetInnerHTML={ {
-					__html: DOMPurify.sanitize( attributes.content ),
-				} }
+				dangerouslySetInnerHTML={{
+					__html: DOMPurify.sanitize(attributes.content),
+				}}
 			/>
-			{ attributes.urlPrimary && attributes.ctaPrimary ? (
+			{attributes.urlPrimary && attributes.ctaPrimary ? (
 				<a
 					className="hero-navigation-primary"
-					href={ attributes.urlPrimary }
+					href={attributes.urlPrimary}
 				>
-					{ attributes.ctaPrimary }
+					{attributes.ctaPrimary}
 				</a>
 			) : (
 				<></>
-			) }
-			{ attributes.urlSecondary && attributes.ctaSecondary ? (
+			)}
+			{attributes.urlSecondary && attributes.ctaSecondary ? (
 				<a
 					className="hero-navigation-secondary"
-					href={ attributes.urlSecondary }
+					href={attributes.urlSecondary}
 				>
-					{ attributes.ctaSecondary }
+					{attributes.ctaSecondary}
 				</a>
 			) : (
 				<></>
-			) }
-			{ attributes.imgurl && attributes.imgAlt ? (
+			)}
+			{attributes.imgUrl ?
 				<img
 					className="hero-image"
-					src={ attributes.imgurl }
-					alt={ attributes.imgAlt }
+					src={attributes.imgUrl}
+					alt={attributes.imgAlt}
 				/>
-			) : (
+				:
 				<></>
-			) }
+			}
 		</section>
 	);
 }

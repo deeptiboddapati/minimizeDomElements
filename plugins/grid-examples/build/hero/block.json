@@ -54,13 +54,13 @@
     "imgUrl_icon": {
       "type": "string",
       "source": "attribute",
-      "selector": "",
+      "selector": ".hero-icon",
       "attribute": "src"
     },
     "imgAlt_icon": {
       "type": "string",
       "source": "attribute",
-      "selector": "",
+      "selector": ".hero-icon",
       "attribute": "alt",
       "default": " "
     },
@@ -70,13 +70,13 @@
     "imgUrl": {
       "type": "string",
       "source": "attribute",
-      "selector": "",
+      "selector": ".hero-image",
       "attribute": "src"
     },
     "imgAlt": {
       "type": "string",
       "source": "attribute",
-      "selector": "",
+      "selector": ".hero-image",
       "attribute": "alt",
       "default": ""
     },
