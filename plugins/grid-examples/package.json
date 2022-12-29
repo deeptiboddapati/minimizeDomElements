@@ -1,7 +1,7 @@
 {
-	"name": "variable-cards",
+	"name": "Gutenberg blocks built with CSS Grid",
 	"version": "0.1.0",
-	"description": "Supports a variable number of cards. Best if they're used in multiples of 3",
+	"description": "A few Example Gutenberg blocks to demonstrate how to use CSS Grid with Gutenberg",
 	"author": "Deepti Boddapati",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",

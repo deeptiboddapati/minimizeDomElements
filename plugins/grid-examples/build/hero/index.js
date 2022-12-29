@@ -469,15 +469,25 @@ __webpack_require__.r(__webpack_exports__);
 
 const ImageControls = props => {
   const {
+    isHovering
+  } = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
+  const {
     className,
-    src,
-    alt,
-    id,
-    propNames,
-    setAttributes,
-    title,
-    instructions
+    // src,
+    // alt,
+    // id,
+    // propNames,
+    // setAttributes,
+    // title,
+    // instruction,
+    // nodeImageContainer,
+    onSuccessfulSelection,
+    nodeImageTag
   } = props;
+  var nodeImageContainer = props.nodeImageContainer;
+  if (!nodeImageContainer) {
+    nodeImageContainer = React.Fragment;
+  }
   const clearImage = (propUrl, propAlt, propId) => {
     var args = {};
     args[propUrl] = undefined;
@@ -485,37 +495,48 @@ const ImageControls = props => {
     args[propId] = undefined;
     setAttributes(args);
   };
-  const handleSelect = (img, propUrl, propAlt, propId) => {
-    var args = {};
-    args[propUrl] = img.url;
-    args[propAlt] = img.alt;
-    args[propId] = img.id;
-    setAttributes(args);
-  };
+
+  //handleSelect can be defined outside and passed in. We can pass in img into it.
+  // const handleSelect = (img, propUrl, propAlt, propId) => {
+  // 	var args = {};
+  // 	args[propUrl] = img.url;
+  // 	args[propAlt] = img.alt;
+  // 	args[propId] = img.id;
+  // 	setAttributes(args);
+  // };
   const onUploadError = err => {
     noticeOperations.removeAllNotices();
     noticeOperations.createErrorNotice(err);
   };
-  const buttonState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, id ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: className,
+  // const buttonState = useState(false);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("nodeImageContainer", null, id ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "imageEditBox",
     style: {
+      display: flex,
       flexFlow: 'column'
+    },
+    handleMouseOver: () => {
+      isHovering[1](true);
+    },
+    handleMouseOut: () => {
+      isHovering[1](false);
     }
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: src,
-    alt: alt,
-    onClick: () => buttonState[1](!buttonState[0])
-  }), buttonState[0] && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+  }, props.children, isHovering[0] && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "imageRemovePanel"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     onClick: () => {
       clearImage(...propNames);
-      buttonState[1](!buttonState[0]);
     },
     style: {
       alignSelf: 'flex-start',
-      justifySelf: 'start'
+      justifySelf: 'start',
+      position: "absolute",
+      top: 0,
+      width: "100%",
+      height: "100%",
+      display: "none"
     }
-  }, "Clear Image")) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaPlaceholder, {
+  }, "Clear Image"))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaPlaceholder, {
     className: className,
     accept: "image/",
     labels: {
@@ -625,6 +646,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/hero/editor.scss");
 /* harmony import */ var _components_global_image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components-global/image */ "./src/components-global/image.js");
 /* harmony import */ var _components_global_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components-global/link */ "./src/components-global/link.js");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 
@@ -636,7 +660,17 @@ function Edit(_ref) {
     attributes,
     setAttributes
   } = _ref;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_global_image__WEBPACK_IMPORTED_MODULE_4__.ImageControls, {
+  function generate_Highlight(params) {}
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "tutorial tutorial-show"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "tutorial-ui"
+  }, [...Array(1000)].map((e, i) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "tutorial-ui-area",
+    key: i,
+    onClick: event => console.log(event.target),
+    "data-grid-id": i
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_global_image__WEBPACK_IMPORTED_MODULE_4__.ImageControls, {
     className: "hero-icon",
     src: attributes.imgUrl_icon,
     alt: attributes.imgAlt_icon,
@@ -688,7 +722,10 @@ function Edit(_ref) {
     setAttributes: setAttributes,
     title: "Icon",
     instructions: "This is a large feature picture to represent this product."
-  }));
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.PanelBody, {
+    title: "Create Tutorial",
+    initialOpen: false
+  })));
 }
 
 /***/ }),

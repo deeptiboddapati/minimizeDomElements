@@ -174,15 +174,25 @@ __webpack_require__.r(__webpack_exports__);
 
 const ImageControls = props => {
   const {
+    isHovering
+  } = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
+  const {
     className,
-    src,
-    alt,
-    id,
-    propNames,
-    setAttributes,
-    title,
-    instructions
+    // src,
+    // alt,
+    // id,
+    // propNames,
+    // setAttributes,
+    // title,
+    // instruction,
+    // nodeImageContainer,
+    onSuccessfulSelection,
+    nodeImageTag
   } = props;
+  var nodeImageContainer = props.nodeImageContainer;
+  if (!nodeImageContainer) {
+    nodeImageContainer = React.Fragment;
+  }
   const clearImage = (propUrl, propAlt, propId) => {
     var args = {};
     args[propUrl] = undefined;
@@ -190,37 +200,48 @@ const ImageControls = props => {
     args[propId] = undefined;
     setAttributes(args);
   };
-  const handleSelect = (img, propUrl, propAlt, propId) => {
-    var args = {};
-    args[propUrl] = img.url;
-    args[propAlt] = img.alt;
-    args[propId] = img.id;
-    setAttributes(args);
-  };
+
+  //handleSelect can be defined outside and passed in. We can pass in img into it.
+  // const handleSelect = (img, propUrl, propAlt, propId) => {
+  // 	var args = {};
+  // 	args[propUrl] = img.url;
+  // 	args[propAlt] = img.alt;
+  // 	args[propId] = img.id;
+  // 	setAttributes(args);
+  // };
   const onUploadError = err => {
     noticeOperations.removeAllNotices();
     noticeOperations.createErrorNotice(err);
   };
-  const buttonState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, id ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: className,
+  // const buttonState = useState(false);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("nodeImageContainer", null, id ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "imageEditBox",
     style: {
+      display: flex,
       flexFlow: 'column'
+    },
+    handleMouseOver: () => {
+      isHovering[1](true);
+    },
+    handleMouseOut: () => {
+      isHovering[1](false);
     }
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: src,
-    alt: alt,
-    onClick: () => buttonState[1](!buttonState[0])
-  }), buttonState[0] && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+  }, props.children, isHovering[0] && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "imageRemovePanel"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     onClick: () => {
       clearImage(...propNames);
-      buttonState[1](!buttonState[0]);
     },
     style: {
       alignSelf: 'flex-start',
-      justifySelf: 'start'
+      justifySelf: 'start',
+      position: "absolute",
+      top: 0,
+      width: "100%",
+      height: "100%",
+      display: "none"
     }
-  }, "Clear Image")) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaPlaceholder, {
+  }, "Clear Image"))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaPlaceholder, {
     className: className,
     accept: "image/",
     labels: {
