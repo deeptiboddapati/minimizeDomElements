@@ -1,5 +1,5 @@
 {
-	"name": "Gutenberg blocks built with CSS Grid",
+	"name": "gb-blocks-css-grid",
 	"version": "0.1.0",
 	"description": "A few Example Gutenberg blocks to demonstrate how to use CSS Grid with Gutenberg",
 	"author": "Deepti Boddapati",

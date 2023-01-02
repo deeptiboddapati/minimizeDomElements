@@ -2121,7 +2121,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkvariable_cards"] = globalThis["webpackChunkvariable_cards"] || [];
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkgb_blocks_css_grid"] = globalThis["webpackChunkgb_blocks_css_grid"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

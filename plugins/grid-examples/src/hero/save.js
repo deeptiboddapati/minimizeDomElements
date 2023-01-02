@@ -22,7 +22,7 @@ export default function save({ attributes }) {
 			<p
 				className="hero-text"
 				dangerouslySetInnerHTML={{
-					__html: DOMPurify.sanitize(attributes.content),
+					__html: DOMPurify.sanitize(attributes.text),
 				}}
 			/>
 			{attributes.urlPrimary && attributes.ctaPrimary ? (

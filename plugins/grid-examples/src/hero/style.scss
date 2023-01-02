@@ -1,6 +1,8 @@
 .hero {
+	margin: 0 auto 128px;
 	margin-bottom: 128px;
 	display: grid;
+	width: fit-content;
 
 	@media screen and (min-width: 768px){
 
@@ -24,7 +26,6 @@
 	&- {
 		&icon {
 			grid-area: icon;
-			place-self: center;
 		}
 
 		&headline {

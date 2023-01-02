@@ -10,28 +10,51 @@ import {
 	PanelRow
 } from '@wordpress/components';
 export default function Edit({ attributes, setAttributes }) {
-	function generate_Highlight(params) {
-
+	function handleSelectIcon(img) {
+		setAttributes({
+			imgId_icon: img.id,
+			imgUrl_icon: img.url,
+			imgAlt_icon: img.alt
+		})
+	}
+	function handleClearIcon() {
+		setAttributes({
+			imgId_icon: '',
+			imgUrl_icon: null,
+			imgAlt_icon: null
+		})
+	}
+	function handleSelectHeroImage(img) {
+		setAttributes({
+			imgId: img.id,
+			imgUrl: img.url,
+			imgAlt: img.alt
+		})
+	}
+	function handleClearHeroImage() {
+		setAttributes({
+			imgId: '',
+			imgUrl: null,
+			imgAlt: null
+		})
 	}
 	return (
-
-		<section {...useBlockProps()}>
-			<div className='tutorial tutorial-show'>
-				<div className='tutorial-ui'>
-					{[...Array(1000)].map((e, i) => <span className="tutorial-ui-area" key={i}
-						onClick={(event) => console.log(event.target)} data-grid-id={i}></span>)}
-				</div>
+		<section className="hero" {...useBlockProps()}>
+			<div className='hero-icon'>
+				<ImageControls
+					imgId={attributes.imgId_icon}
+					title="Icon"
+					instructions="This is a small Icon to represent this product."
+					handleSelectImage={handleSelectIcon}
+					handleClearImage={handleClearIcon}
+				>
+					<img
+						className="hero-icon"
+						src={attributes.imgUrl_icon}
+						alt={attributes.imgAlt_icon}
+					/>
+				</ImageControls>
 			</div>
-			<ImageControls
-				className="hero-icon"
-				src={attributes.imgUrl_icon}
-				alt={attributes.imgAlt_icon}
-				id={attributes.imgId_icon}
-				propNames={['imgUrl_icon', 'imgAlt_icon', 'imgId_icon']}
-				setAttributes={setAttributes}
-				title="Icon"
-				instructions="This is a small Icon to represent this product."
-			/>
 			<RichText
 				className="hero-headline"
 				tagName="h1"
@@ -56,7 +79,6 @@ export default function Edit({ attributes, setAttributes }) {
 			>
 				{attributes.ctaPrimary}
 			</a>
-
 			<LinkInput
 				url={attributes.urlPrimary}
 				content={attributes.ctaPrimary}
@@ -77,26 +99,27 @@ export default function Edit({ attributes, setAttributes }) {
 				attrNameUrl={'urlSecondary'}
 				attrNameContent={'ctaSecondary'}
 			/>
-			<ImageControls
-				className="hero-image"
-				src={attributes.imgUrl}
-				alt={attributes.imgAlt}
-				id={attributes.imgId}
-				propNames={[
-					'imgUrl',
-					'imgAlt',
-					'imgId',
-				]}
-				setAttributes={setAttributes}
-				title="Icon"
-				instructions="This is a large feature picture to represent this product."
-			/>
+			<div className='hero-image'>
+				<ImageControls
+					imgId={attributes.imgId}
+					title="Hero Image"
+					instructions="This is a large featured picture to represent this product."
+					handleSelectImage={handleSelectHeroImage}
+					handleClearImage={handleClearHeroImage}
+				>
+					<img
+						className="hero-image"
+						src={attributes.imgUrl}
+						alt={attributes.imgAlt}
+						style={{ maxHeight: '100%', maxWidth: '100%' }}
+					/>
+				</ImageControls>
+			</div>
 			<InspectorControls>
 				<PanelBody title="Create Tutorial" initialOpen={false}>
 
 				</PanelBody>
 			</InspectorControls>
-
 		</section>
 	);
 }

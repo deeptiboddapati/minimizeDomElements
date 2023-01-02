@@ -1,93 +1,73 @@
 import { MediaPlaceholder } from '@wordpress/block-editor';
-import { useState } from '@wordpress/element';
+import React, { useState, useEffect } from 'react';
 export const ImageControls = (props) => {
-	const { isHovering } = useState();
 	const {
-		className,
-		// src,
-		// alt,
-		// id,
-		// propNames,
-		// setAttributes,
-		// title,
-		// instruction,
-		// nodeImageContainer,
-		onSuccessfulSelection,
-		nodeImageTag
+		imgId,
+		handleSelectImage,
+		handleClearImage,
+		title,
+		instructions
 	} = props;
-	var nodeImageContainer = props.nodeImageContainer;
-	if (!nodeImageContainer) {
-		nodeImageContainer = React.Fragment;
-	}
-	const clearImage = (propUrl, propAlt, propId) => {
-		var args = {};
-		args[propUrl] = undefined;
-		args[propAlt] = '';
-		args[propId] = undefined;
-		setAttributes(args);
-	};
-
-	//handleSelect can be defined outside and passed in. We can pass in img into it.
-	// const handleSelect = (img, propUrl, propAlt, propId) => {
-	// 	var args = {};
-	// 	args[propUrl] = img.url;
-	// 	args[propAlt] = img.alt;
-	// 	args[propId] = img.id;
-	// 	setAttributes(args);
-	// };
 	const onUploadError = (err) => {
 		noticeOperations.removeAllNotices();
 		noticeOperations.createErrorNotice(err);
 	};
-	// const buttonState = useState(false);
+	const isHovering = useState(false);
 	return (
-		<nodeImageContainer>
-			{id ? (
-				<div className='imageEditBox'
-					style={{
-						display: flex,
-						flexFlow: 'column',
-
-					}}
-					handleMouseOver={() => { isHovering[1](true) }}
-					handleMouseOut={() => { isHovering[1](false) }}
-				>
+		<div
+			className='imageWrapper'
+			style={{
+				height: 'fit-content',
+				width: 'fit-content',
+				position: 'relative',
+				maxHeight: '100%',
+				maxWidth: '100%'
+			}}
+			onMouseEnter={() => { isHovering[1](true) }}
+			onMouseLeave={() => { isHovering[1](false) }}
+		>
+			{imgId ? (
+				<>
 					{props.children}
-					{
-						isHovering[0] &&
-						<div className='imageRemovePanel'>
+					<div
+						className='imageEditBox'
+						style={{
+							display: 'grid',
+							gridTemplateColumns: 'minmax(100px, auto)',
+							gridTemplateRows: 'minmax(100px, auto)',
+							position: 'absolute',
+							top: 0,
+							right: 0,
+							left: 0,
+							bottom: 0
+						}}
+					>
+						{
+							isHovering[0] &&
 							<button
 								onClick={() => {
-									clearImage(...propNames);
+									handleClearImage();
 								}}
 								style={{
-									alignSelf: 'flex-start',
-									justifySelf: 'start',
-									position: "absolute",
-									top: 0,
-									width: "100%",
-									height: "100%",
-									display: "none",
+									placeSelf: 'center',
 								}}
 							>
 								Clear Image
 							</button>
-						</div>
-					}
-				</div>
+						}
+					</div>
+				</>
 			) : (
 				<MediaPlaceholder
-					className={className}
 					accept="image/"
 					labels={{ title: title, instructions: instructions }}
 					onError={(err) => onUploadError(err)}
 					onSelect={(arg) => {
-						handleSelect(arg, ...propNames);
+						handleSelectImage(arg);
 					}}
-					value={id}
-					mediaPreview={id && <img src={url} alt={alt} />}
+					value={imgId}
 				/>
 			)}
-		</nodeImageContainer>
+		</div>
 	);
 };

@@ -169,80 +169,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
 const ImageControls = props => {
   const {
-    isHovering
-  } = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
-  const {
-    className,
-    // src,
-    // alt,
-    // id,
-    // propNames,
-    // setAttributes,
-    // title,
-    // instruction,
-    // nodeImageContainer,
-    onSuccessfulSelection,
-    nodeImageTag
+    imgId,
+    handleSelectImage,
+    handleClearImage,
+    title,
+    instructions
   } = props;
-  var nodeImageContainer = props.nodeImageContainer;
-  if (!nodeImageContainer) {
-    nodeImageContainer = React.Fragment;
-  }
-  const clearImage = (propUrl, propAlt, propId) => {
-    var args = {};
-    args[propUrl] = undefined;
-    args[propAlt] = '';
-    args[propId] = undefined;
-    setAttributes(args);
-  };
-
-  //handleSelect can be defined outside and passed in. We can pass in img into it.
-  // const handleSelect = (img, propUrl, propAlt, propId) => {
-  // 	var args = {};
-  // 	args[propUrl] = img.url;
-  // 	args[propAlt] = img.alt;
-  // 	args[propId] = img.id;
-  // 	setAttributes(args);
-  // };
   const onUploadError = err => {
     noticeOperations.removeAllNotices();
     noticeOperations.createErrorNotice(err);
   };
-  // const buttonState = useState(false);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("nodeImageContainer", null, id ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "imageEditBox",
+  const isHovering = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "imageWrapper",
     style: {
-      display: flex,
-      flexFlow: 'column'
+      height: 'fit-content',
+      width: 'fit-content',
+      position: 'relative',
+      maxHeight: '100%',
+      maxWidth: '100%'
     },
-    handleMouseOver: () => {
+    onMouseEnter: () => {
       isHovering[1](true);
     },
-    handleMouseOut: () => {
+    onMouseLeave: () => {
       isHovering[1](false);
     }
-  }, props.children, isHovering[0] && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "imageRemovePanel"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+  }, imgId ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, props.children, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "imageEditBox",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(100px, auto)',
+      gridTemplateRows: 'minmax(100px, auto)',
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      left: 0,
+      bottom: 0
+    }
+  }, isHovering[0] && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     onClick: () => {
-      clearImage(...propNames);
+      handleClearImage();
     },
     style: {
-      alignSelf: 'flex-start',
-      justifySelf: 'start',
-      position: "absolute",
-      top: 0,
-      width: "100%",
-      height: "100%",
-      display: "none"
+      placeSelf: 'center'
     }
   }, "Clear Image"))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaPlaceholder, {
-    className: className,
     accept: "image/",
     labels: {
       title: title,
@@ -250,13 +229,9 @@ const ImageControls = props => {
     },
     onError: err => onUploadError(err),
     onSelect: arg => {
-      handleSelect(arg, ...propNames);
+      handleSelectImage(arg);
     },
-    value: id,
-    mediaPreview: id && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: url,
-      alt: alt
-    })
+    value: imgId
   }));
 };
 
@@ -2040,6 +2015,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["React"];
+
+/***/ }),
+
 /***/ "@wordpress/block-editor":
 /*!*************************************!*\
   !*** external ["wp","blockEditor"] ***!
@@ -2274,7 +2260,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkvariable_cards"] = globalThis["webpackChunkvariable_cards"] || [];
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkgb_blocks_css_grid"] = globalThis["webpackChunkgb_blocks_css_grid"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

@@ -2,8 +2,11 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/hero/style.scss ***!
   \********************************************************************************************************************************************************************************************************************************************/
 .hero {
+  margin: 0 auto 128px;
   margin-bottom: 128px;
   display: grid;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media screen and (min-width: 1366px) {
   .hero {
@@ -17,7 +20,6 @@
 }
 .hero-icon {
   grid-area: icon;
-  place-self: center;
 }
 .hero-headline {
   grid-row: 2/3;

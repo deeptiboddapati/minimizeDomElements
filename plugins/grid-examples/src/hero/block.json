@@ -15,15 +15,15 @@
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"attributes": {
-		"heading": {
+		"headline": {
 			"type": "string",
 			"source": "text",
-			"selector": "hero-headline"
+			"selector": ".hero-headline"
 		},
 		"text": {
 			"type": "string",
 			"source": "text",
-			"selector": "hero-text"
+			"selector": ".hero-text"
 		},
 		"ctaPrimary": {
 			"type": "string",
