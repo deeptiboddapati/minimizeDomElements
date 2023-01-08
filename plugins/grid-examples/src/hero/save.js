@@ -1,7 +1,6 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import DOMPurify from 'dompurify';
 export default function save({ attributes }) {
-	console.log(attributes)
 	return (
 		<section className="hero" {...useBlockProps.save()}>
 			{attributes.imgUrl_icon ?

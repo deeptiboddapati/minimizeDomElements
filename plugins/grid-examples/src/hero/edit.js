@@ -1,13 +1,9 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, RichText, InspectorControls } from '@wordpress/block-editor';
 import './editor.scss';
-import { ImageControls } from '../components-global/image';
-import { LinkInput } from '../components-global/link';
+import { ImageControls, LinkInput } from 'block-editor-additional-components'
 import {
-	TextControl,
-	ToggleControl,
-	PanelBody,
-	PanelRow
+	PanelBody
 } from '@wordpress/components';
 export default function Edit({ attributes, setAttributes }) {
 	function handleSelectIcon(img) {
@@ -39,7 +35,7 @@ export default function Edit({ attributes, setAttributes }) {
 		})
 	}
 	return (
-		<section className="hero" {...useBlockProps()}>
+		<section className="hero" {...useBlockProps()} style={{ overflow: 'visible' }}>
 			<div className='hero-icon'>
 				<ImageControls
 					imgId={attributes.imgId_icon}
@@ -73,32 +69,41 @@ export default function Edit({ attributes, setAttributes }) {
 					'This is the most important supporting point on the page.'
 				)}
 			/>
-			<a
-				href={attributes.urlPrimary}
-				className="hero-navigation-primary"
-			>
-				{attributes.ctaPrimary}
-			</a>
-			<LinkInput
-				url={attributes.urlPrimary}
-				content={attributes.ctaPrimary}
-				setAttributes={setAttributes}
-				attrNameUrl="urlPrimary"
-				attrNameContent="ctaPrimary"
-			/>
-			<a
-				href={attributes.urlSecondary}
-				className="hero-navigation-secondary"
-			>
-				{attributes.ctaSecondary}
-			</a>
-			<LinkInput
-				url={attributes.urlSecondary}
-				content={attributes.ctaSecondary}
-				setAttributes={setAttributes}
-				attrNameUrl={'urlSecondary'}
-				attrNameContent={'ctaSecondary'}
-			/>
+			<div className="hero-navigation-primary">
+				<LinkInput
+					url={attributes.urlPrimary}
+					content={attributes.ctaPrimary}
+					setAttributes={setAttributes}
+					attrNameUrl="urlPrimary"
+					attrNameContent="ctaPrimary"
+				>
+
+					<a
+						href={attributes.urlPrimary}
+						className="hero-navigation-primary-button"
+					>
+						{attributes.ctaPrimary}
+					</a>
+
+				</LinkInput>
+			</div>
+			<div className="hero-navigation-secondary">
+				<LinkInput
+					url={attributes.urlSecondary}
+					content={attributes.ctaSecondary}
+					setAttributes={setAttributes}
+					attrNameUrl={'urlSecondary'}
+					attrNameContent={'ctaSecondary'}
+				>
+					<a
+						href={attributes.urlSecondary}
+						className="hero-navigation-secondary-button"
+					>
+						{attributes.ctaSecondary}
+					</a>
+				</LinkInput>
+			</div>
+
 			<div className='hero-image'>
 				<ImageControls
 					imgId={attributes.imgId}
@@ -120,6 +125,6 @@ export default function Edit({ attributes, setAttributes }) {
 
 				</PanelBody>
 			</InspectorControls>
-		</section>
+		</section >
 	);
 }
