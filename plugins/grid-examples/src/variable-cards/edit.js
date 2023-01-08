@@ -6,42 +6,42 @@ import {
 	InspectorControls,
 } from '@wordpress/block-editor';
 import './editor.scss';
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit({ attributes, setAttributes }) {
 	return (
-		<section className="variable-cards" { ...useBlockProps() }>
+		<section className="variable-cards" {...useBlockProps()}>
 			<RichText
-				className="variable-cards-section-header"
+				className="variable-cards-captions-section-header"
 				tagName="p"
-				value={ attributes.header }
-				onChange={ ( content ) => setAttributes( { header: content } ) }
-				placeholder={ __( 'Put the name of the header here...' ) }
+				value={attributes.header}
+				onChange={(content) => setAttributes({ header: content })}
+				placeholder={__('Put the name of the header here...')}
 			/>
 			<RichText
-				className="variable-cards-heading"
+				className="variable-cards-captions-heading"
 				tagName="h3"
-				value={ attributes.heading }
-				onChange={ ( content ) =>
-					setAttributes( { heading: content } )
+				value={attributes.heading}
+				onChange={(content) =>
+					setAttributes({ heading: content })
 				}
-				placeholder={ __( 'Heading of the verse' ) }
+				placeholder={__('Heading of the verse')}
 			/>
 			<RichText
-				className="variable-cards-text"
+				className="variable-cards-captions-text"
 				tagName="p"
-				value={ attributes.text }
-				onChange={ ( content ) => setAttributes( { text: content } ) }
-				placeholder={ __( 'Preamble to the verses' ) }
+				value={attributes.text}
+				onChange={(content) => setAttributes({ text: content })}
+				placeholder={__('Preamble to the verses')}
 			/>
 			<div className="variable-cards-cards">
-				<InnerBlocks allowedBlocks={ [ 'db/card-icon' ] } />
+				<InnerBlocks allowedBlocks={['db/card-icon']} />
 			</div>
 			<InspectorControls>
 				<div>
 					<a
-						onClick={ () => generate_Highlight() }
-						onHover={ () => {
+						onClick={() => generate_Highlight()}
+						onHover={() => {
 							return <>Thisss</>;
-						} }
+						}}
 					>
 						Add Highlight
 					</a>

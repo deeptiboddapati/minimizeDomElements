@@ -14,17 +14,17 @@
     "heading": {
       "type": "string",
       "source": "text",
-      "selector": ".variable-cards-heading"
+      "selector": ".variable-cards-captions-heading"
     },
     "text": {
       "type": "string",
       "source": "text",
-      "selector": ".variable-cards-text"
+      "selector": ".variable-cards-captions-text"
     },
     "header": {
       "type": "string",
       "source": "text",
-      "selector": ".variable-cards-section-header"
+      "selector": ".variable-cards-captions-section-header"
     }
   },
   "textdomain": "textdomain",

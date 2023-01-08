@@ -33,7 +33,7 @@ function Edit(_ref) {
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("section", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
     className: "variable-cards"
   }, (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)()), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
-    className: "variable-cards-section-header",
+    className: "variable-cards-captions-section-header",
     tagName: "p",
     value: attributes.header,
     onChange: content => setAttributes({
@@ -41,7 +41,7 @@ function Edit(_ref) {
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Put the name of the header here...')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
-    className: "variable-cards-heading",
+    className: "variable-cards-captions-heading",
     tagName: "h3",
     value: attributes.heading,
     onChange: content => setAttributes({
@@ -49,7 +49,7 @@ function Edit(_ref) {
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Heading of the verse')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
-    className: "variable-cards-text",
+    className: "variable-cards-captions-text",
     tagName: "p",
     value: attributes.text,
     onChange: content => setAttributes({
@@ -1966,7 +1966,7 @@ function _extends() {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"db/variable-cards","version":"0.1.0","title":"Cards with a header, a title and a description","category":"widgets","icon":"smiley","description":"Supports a variable number of cards. Best if they\'re used in multiples of 3","supports":{"html":false},"attributes":{"heading":{"type":"string","source":"text","selector":".variable-cards-heading"},"text":{"type":"string","source":"text","selector":".variable-cards-text"},"header":{"type":"string","source":"text","selector":".variable-cards-section-header"}},"textdomain":"textdomain","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"db/variable-cards","version":"0.1.0","title":"Cards with a header, a title and a description","category":"widgets","icon":"smiley","description":"Supports a variable number of cards. Best if they\'re used in multiples of 3","supports":{"html":false},"attributes":{"heading":{"type":"string","source":"text","selector":".variable-cards-captions-heading"},"text":{"type":"string","source":"text","selector":".variable-cards-captions-text"},"header":{"type":"string","source":"text","selector":".variable-cards-captions-section-header"}},"textdomain":"textdomain","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

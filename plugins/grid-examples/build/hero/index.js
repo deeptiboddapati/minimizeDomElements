@@ -12125,7 +12125,6 @@ function save(_ref) {
   let {
     attributes
   } = _ref;
-  console.log(attributes);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("section", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
     className: "hero"
   }, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save()), attributes.imgUrl_icon ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("img", {
