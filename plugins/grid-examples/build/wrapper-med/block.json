@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "db/wrapper-med",
+  "version": "0.1.0",
+  "title": "Medium Sized Wrapper",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "A medium sized wrapper that you can use to center content.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "wrapper-med",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -24,6 +24,7 @@ function db_grid_examples_block_init() {
 	register_block_type( __DIR__ . '/build/card-icon' );
 	register_block_type( __DIR__ . '/build/variable-cards' );
 	register_block_type( __DIR__ . '/build/hero' );
-
+	register_block_type( __DIR__ . '/build/portfolio-project-card' );
+	register_block_type( __DIR__ . '/build/wrapper-med' );
 }
 add_action( 'init', 'db_grid_examples_block_init' );

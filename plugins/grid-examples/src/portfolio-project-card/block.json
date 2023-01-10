@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "db/portfolio-project-card",
+	"version": "0.1.0",
+	"title": "Portfolio Project Introduction Card",
+	"category": "media",
+	"icon": "smiley",
+	"description": "Shows a short introduction of one portfolio project.",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"text": {
+			"type": "string",
+			"source": "text",
+			"selector": ".portfolio-project-name"
+		},
+		"heading": {
+			"type": "string",
+			"source": "text",
+			"selector": ".portfolio-project-service"
+		},
+		"urlPrimary": {
+			"type": "string",
+			"source": "text",
+			"selector": ""
+		},
+		"ctaPrimary": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "",
+			"attribute": "href",
+			"default": ""
+		},
+		"imgUrl": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".portfolio-project-img",
+			"attribute": "src"
+		},
+		"imgAlt": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".portfolio-project-img",
+			"attribute": "alt",
+			"default": ""
+		},
+		"imgId": {
+			"type": "number"
+		}
+	},
+	"textdomain": "portfolio-project-card",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

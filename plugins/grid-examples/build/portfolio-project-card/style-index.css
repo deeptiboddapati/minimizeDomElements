@@ -1,0 +1,33 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/portfolio-project-card/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.portfolio-project {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: column;
+  padding: 32px;
+  background: #fff;
+  box-shadow: 0 4px 4px rgba(135, 146, 161, 0.16), 0 6px 41px rgba(135, 146, 161, 0.11);
+  border-radius: 18px;
+}
+.portfolio-project-name {
+  font-family: Roboto-Medium;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #1e266d;
+}
+.portfolio-project-service {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #455880;
+}
+.portfolio-project-img {
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

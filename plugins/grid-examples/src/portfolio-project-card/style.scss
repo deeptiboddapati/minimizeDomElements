@@ -1,0 +1,35 @@
+.portfolio {
+	&-project {
+		display: flex;
+		justify-content: space-evenly;
+		flex-flow: column;
+		padding: 32px;
+		background: #fff;
+		box-shadow: 0 4px 4px rgb(135 146 161 / 16%), 0 6px 41px rgb(135 146 161 / 11%);
+		border-radius: 18px;
+
+		&- {
+			&name {
+				font-family: Roboto-Medium;
+				font-style: normal;
+				font-weight: 500;
+				font-size: 24px;
+				line-height: 32px;
+				color: #1e266d;
+			}
+
+			&service {
+				font-family: Roboto, sans-serif;
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 24px;
+				color: #455880;
+			}
+
+			&img {
+				max-width: 100%;
+			}
+		}
+	}
+}

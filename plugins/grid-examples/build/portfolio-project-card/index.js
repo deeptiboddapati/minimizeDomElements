@@ -11901,10 +11901,10 @@ var convertCurry = convert.bind(null, (react__WEBPACK_IMPORTED_MODULE_1___defaul
 
 /***/ }),
 
-/***/ "./src/card-icon/edit.js":
-/*!*******************************!*\
-  !*** ./src/card-icon/edit.js ***!
-  \*******************************/
+/***/ "./src/portfolio-project-card/edit.js":
+/*!********************************************!*\
+  !*** ./src/portfolio-project-card/edit.js ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -11912,19 +11912,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Edit)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/portfolio-project-card/editor.scss");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/card-icon/editor.scss");
-/* harmony import */ var block_editor_additional_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! block-editor-additional-components */ "./node_modules/block-editor-additional-components/dist/index.js");
-/* harmony import */ var block_editor_additional_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(block_editor_additional_components__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_global_layouts_layouts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components-global/layouts/layouts */ "./src/components-global/layouts/layouts.js");
-
-
+/* harmony import */ var block_editor_additional_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! block-editor-additional-components */ "./node_modules/block-editor-additional-components/dist/index.js");
+/* harmony import */ var block_editor_additional_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(block_editor_additional_components__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -11935,77 +11931,95 @@ function Edit(_ref) {
     attributes,
     setAttributes
   } = _ref;
-  function handleSelectIcon(img) {
+  function handleSelectImage(img) {
     setAttributes({
-      imgId_icon: img.id,
-      imgUrl_icon: img.url,
-      imgAlt_icon: img.alt
+      imgId: img.id,
+      imgUrl: img.url,
+      imgAlt: img.alt
     });
   }
-  function handleClearIcon() {
+  function handleClearImage() {
     setAttributes({
-      imgId_icon: '',
-      imgUrl_icon: null,
-      imgAlt_icon: null
+      imgId: '',
+      imgUrl: null,
+      imgAlt: null
     });
   }
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    className: "card-icon"
-  }, (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)()), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_components_global_layouts_layouts__WEBPACK_IMPORTED_MODULE_6__.LayoutFullWidth, {
-    className: "card-icon",
-    onClick: () => console.log('hurdur')
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    className: "card-icon-image"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(block_editor_additional_components__WEBPACK_IMPORTED_MODULE_5__.ImageControls, {
-    imgId: attributes.imgId_icon,
-    title: "Icon",
-    instructions: "This is a small Icon to represent this product.",
-    handleSelectImage: handleSelectIcon,
-    handleClearImage: handleClearIcon
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("img", {
-    className: "card-icon-image",
-    src: attributes.imgUrl_icon,
-    alt: attributes.imgAlt_icon
-  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
-    className: "card-icon-heading",
-    tagName: "h4",
-    value: attributes.title,
-    onChange: newTitle => setAttributes({
-      title: newTitle
-    }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Title. Keep it below 3 words.')
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
-    className: "card-icon-text",
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "portfolio-project"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(block_editor_additional_components__WEBPACK_IMPORTED_MODULE_4__.ImageControls, {
+    imgId: attributes.imgId,
+    title: "Project Image",
+    instructions: "This is the image that introduces the project",
+    handleSelectImage: handleSelectImage,
+    handleClearImage: handleClearImage
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    className: "portfolio-project-img",
+    src: attributes.imgUrl,
+    alt: attributes.imgAlt
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
+    className: "portfolio-project-service",
     tagName: "p",
-    value: attributes.content,
-    onChange: value => setAttributes({
-      content: value
+    value: attributes.heading,
+    onChange: content => setAttributes({
+      heading: content
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Description. Keep it below 20 words.')
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter the name of the services we did on this project')
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
+    className: "portfolio-project-name",
+    tagName: "p",
+    value: attributes.text,
+    onChange: content => setAttributes({
+      text: content
+    }),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter the project\'s Name')
   }));
 }
 
 /***/ }),
 
-/***/ "./src/card-icon/index.js":
-/*!********************************!*\
-  !*** ./src/card-icon/index.js ***!
-  \********************************/
+/***/ "./src/portfolio-project-card/index.js":
+/*!*********************************************!*\
+  !*** ./src/portfolio-project-card/index.js ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/card-icon/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/card-icon/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/card-icon/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/card-icon/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/portfolio-project-card/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/portfolio-project-card/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/portfolio-project-card/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/portfolio-project-card/block.json");
+/**
+ * Registers a new block provided a unique name and an object defining its behavior.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * All files containing `style` keyword are bundled together. The code used
+ * gets applied both to the front of your site and to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+
+
+/**
+ * Internal dependencies
+ */
 
 
 
 
-
+/**
+ * Every block starts by registering a new block type definition.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
   /**
    * @see ./edit.js
@@ -12019,10 +12033,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/card-icon/save.js":
-/*!*******************************!*\
-  !*** ./src/card-icon/save.js ***!
-  \*******************************/
+/***/ "./src/portfolio-project-card/save.js":
+/*!********************************************!*\
+  !*** ./src/portfolio-project-card/save.js ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -12045,84 +12059,24 @@ function save(_ref) {
   let {
     attributes
   } = _ref;
-  const {
-    imgUrl,
-    imgAlt,
-    title,
-    content
-  } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    className: "card-icon"
-  }, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save()), imgUrl && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("img", {
-    className: "card-icon-image",
-    src: imgUrl,
-    alt: imgAlt
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("h4", {
-    className: "card-icon-heading",
+    className: "portfolio-project"
+  }, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save()), attributes.imgUrl ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("img", {
+    className: "portfolio-project-img",
+    src: attributes.imgUrl,
+    alt: attributes.imgAlt
+  }) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("p", {
+    className: "portfolio-project-service",
     dangerouslySetInnerHTML: {
-      __html: dompurify__WEBPACK_IMPORTED_MODULE_3___default().sanitize(title)
+      __html: dompurify__WEBPACK_IMPORTED_MODULE_3___default().sanitize(attributes.heading)
     }
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("p", {
-    className: "card-icon-text",
+    className: "portfolio-project-name",
     dangerouslySetInnerHTML: {
-      __html: dompurify__WEBPACK_IMPORTED_MODULE_3___default().sanitize(content)
+      __html: dompurify__WEBPACK_IMPORTED_MODULE_3___default().sanitize(attributes.text)
     }
   }));
 }
-
-/***/ }),
-
-/***/ "./src/components-global/layouts/layouts.js":
-/*!**************************************************!*\
-  !*** ./src/components-global/layouts/layouts.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "LayoutCenteredColumn": () => (/* binding */ LayoutCenteredColumn),
-/* harmony export */   "LayoutFullWidth": () => (/* binding */ LayoutFullWidth),
-/* harmony export */   "LayoutFullWidthPadded": () => (/* binding */ LayoutFullWidthPadded),
-/* harmony export */   "LayoutSidebar": () => (/* binding */ LayoutSidebar)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-const LayoutFullWidth = props => {
-  console.log(props);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    className: "layoutFullWidth"
-  }, props.children);
-};
-const LayoutFullWidthPadded = props => {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    className: "layoutFullWidth-padded"
-  }, props.children);
-};
-const LayoutCenteredColumn = props => {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    className: "layoutCenteredColumn",
-    style: {
-      width: "1229px",
-      margin: '0 auto'
-    }
-  }, props.blockProps), props.children);
-};
-const LayoutSidebar = props => {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    className: "layoutSidebar"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    className: "layoutSidebarPrimary"
-  }, props.primary), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    className: "layoutSidebarSecondary"
-  }, props.secondary));
-};
 
 /***/ }),
 
@@ -18273,10 +18227,10 @@ handlePrototype(DOMTokenListPrototype, 'DOMTokenList');
 
 /***/ }),
 
-/***/ "./src/card-icon/editor.scss":
-/*!***********************************!*\
-  !*** ./src/card-icon/editor.scss ***!
-  \***********************************/
+/***/ "./src/portfolio-project-card/editor.scss":
+/*!************************************************!*\
+  !*** ./src/portfolio-project-card/editor.scss ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -18286,10 +18240,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/card-icon/style.scss":
-/*!**********************************!*\
-  !*** ./src/card-icon/style.scss ***!
-  \**********************************/
+/***/ "./src/portfolio-project-card/style.scss":
+/*!***********************************************!*\
+  !*** ./src/portfolio-project-card/style.scss ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -22595,14 +22549,14 @@ var counter = api.counter;
 
 /***/ }),
 
-/***/ "./src/card-icon/block.json":
-/*!**********************************!*\
-  !*** ./src/card-icon/block.json ***!
-  \**********************************/
+/***/ "./src/portfolio-project-card/block.json":
+/*!***********************************************!*\
+  !*** ./src/portfolio-project-card/block.json ***!
+  \***********************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"db/card-icon","version":"0.1.0","title":"Card with Icon","category":"widgets","icon":"smiley","description":"A card that has an icon, title, and a description.","supports":{"html":false},"attributes":{"title":{"type":"string","source":"text","selector":".card-icon-heading"},"content":{"type":"string","source":"text","selector":".card-icon-text"},"imgUrl":{"type":"string","source":"attribute","selector":".card-icon-image","attribute":"src"},"imgAlt":{"type":"string","source":"attribute","selector":".card-icon-image","attribute":"alt","default":""},"imgId":{"type":"number"}},"textdomain":"textdomain","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"db/portfolio-project-card","version":"0.1.0","title":"Portfolio Project Introduction Card","category":"media","icon":"smiley","description":"Shows a short introduction of one portfolio project.","supports":{"html":false},"attributes":{"text":{"type":"string","source":"text","selector":".portfolio-project-name"},"heading":{"type":"string","source":"text","selector":".portfolio-project-service"},"urlPrimary":{"type":"string","source":"text","selector":""},"ctaPrimary":{"type":"string","source":"attribute","selector":"","attribute":"href","default":""},"imgUrl":{"type":"string","source":"attribute","selector":".portfolio-project-img","attribute":"src"},"imgAlt":{"type":"string","source":"attribute","selector":".portfolio-project-img","attribute":"alt","default":""},"imgId":{"type":"number"}},"textdomain":"portfolio-project-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
@@ -22728,8 +22682,8 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"card-icon/index": 0,
-/******/ 			"card-icon/style-index": 0
+/******/ 			"portfolio-project-card/index": 0,
+/******/ 			"portfolio-project-card/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -22779,7 +22733,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["card-icon/style-index"], () => (__webpack_require__("./src/card-icon/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["portfolio-project-card/style-index"], () => (__webpack_require__("./src/portfolio-project-card/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
